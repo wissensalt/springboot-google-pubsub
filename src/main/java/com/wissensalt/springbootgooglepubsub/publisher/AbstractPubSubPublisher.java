@@ -8,11 +8,11 @@ import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Slf4j
-public abstract class PubSubPublisher {
+public abstract class AbstractPubSubPublisher {
 
   private final PubSubTemplate pubSubTemplate;
 
-  protected PubSubPublisher(PubSubTemplate pubSubTemplate) {
+  protected AbstractPubSubPublisher(PubSubTemplate pubSubTemplate) {
     this.pubSubTemplate = pubSubTemplate;
   }
 

@@ -6,7 +6,7 @@ import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyDlqPublisher extends PubSubPublisher {
+public class MyDlqPublisher extends AbstractPubSubPublisher {
 
   private final PubSubProperty pubSubProperty;
 

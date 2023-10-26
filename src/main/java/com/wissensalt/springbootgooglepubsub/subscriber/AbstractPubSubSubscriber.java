@@ -2,7 +2,7 @@ package com.wissensalt.springbootgooglepubsub.subscriber;
 
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
-import com.wissensalt.springbootgooglepubsub.publisher.PubSubPublisher;
+import com.wissensalt.springbootgooglepubsub.publisher.AbstractPubSubPublisher;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -30,9 +30,9 @@ public abstract class AbstractPubSubSubscriber {
 
   public abstract int getMaxRetryNumber();
 
-  public abstract PubSubPublisher getDlqPublisher();
+  public abstract AbstractPubSubPublisher getDlqPublisher();
 
-  public abstract PubSubPublisher getSourcePublisher();
+  public abstract AbstractPubSubPublisher getSourcePublisher();
 
   public abstract int getRetryDelayDurationInMs();
 

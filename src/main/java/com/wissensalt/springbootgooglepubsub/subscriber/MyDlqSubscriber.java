@@ -5,7 +5,7 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.wissensalt.springbootgooglepubsub.MyRuntimeException;
 import com.wissensalt.springbootgooglepubsub.Payload;
 import com.wissensalt.springbootgooglepubsub.property.PubSubProperty;
-import com.wissensalt.springbootgooglepubsub.publisher.PubSubPublisher;
+import com.wissensalt.springbootgooglepubsub.publisher.AbstractPubSubPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
@@ -46,12 +46,12 @@ public class MyDlqSubscriber extends AbstractPubSubSubscriber {
   }
 
   @Override
-  public PubSubPublisher getDlqPublisher() {
+  public AbstractPubSubPublisher getDlqPublisher() {
     return null;
   }
 
   @Override
-  public PubSubPublisher getSourcePublisher() {
+  public AbstractPubSubPublisher getSourcePublisher() {
     return null;
   }
 

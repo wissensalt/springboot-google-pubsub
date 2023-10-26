@@ -10,7 +10,7 @@ import com.wissensalt.springbootgooglepubsub.property.ApplicationProperty;
 import com.wissensalt.springbootgooglepubsub.property.PubSubProperty;
 import com.wissensalt.springbootgooglepubsub.publisher.MyDlqPublisher;
 import com.wissensalt.springbootgooglepubsub.publisher.MySourcePublisher;
-import com.wissensalt.springbootgooglepubsub.publisher.PubSubPublisher;
+import com.wissensalt.springbootgooglepubsub.publisher.AbstractPubSubPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
 import org.springframework.cloud.gcp.pubsub.support.BasicAcknowledgeablePubsubMessage;
@@ -53,12 +53,12 @@ public class MySourceSubscriber extends AbstractPubSubSubscriber {
   }
 
   @Override
-  public PubSubPublisher getDlqPublisher() {
+  public AbstractPubSubPublisher getDlqPublisher() {
     return dlqPublisher;
   }
 
   @Override
-  public PubSubPublisher getSourcePublisher() {
+  public AbstractPubSubPublisher getSourcePublisher() {
     return mySourcePublisher;
   }
 
