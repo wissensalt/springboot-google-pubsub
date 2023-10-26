@@ -1,0 +1,20 @@
+pubsub:
+  source:
+    topic: my-topic
+    subscriber: my-subscriber
+  dlq:
+    topic: my-dlq-topic
+    subscriber: my-dlq-subscriber
+  enable-dlq: true
+  max-retry-number: 3
+  retry-delay-in-milliseconds: 500
+  enable-retry-subscriber: false
+  enable-retry-publisher: true
+
+google:
+  project-id: my-project-id
+  credentialFile: classpath:credential.json
+
+application:
+  isK8S: false
+  simulate-dlq: false
